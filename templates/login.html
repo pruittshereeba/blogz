@@ -9,7 +9,12 @@
         <tr>
             <td><label for="email">Username</label></td>
             <td>
-                <input name="email" type="text" value="{{ email}}">
+                <input name="email" type="text" value="{{ email }}">
+                {% if email == '' %}
+                <br>
+                <span class='error'>Please enter a username</span>
+                <br>
+                {% endif %}
             </td>
         </tr>
 
@@ -17,6 +22,11 @@
             <td><label for="password">Password</label></td>
             <td>
                 <input name="password" type="password">
+                {% if password == '' %}
+                <br>
+                <span class='error'>Please enter a password</span>
+                <br>
+                {% endif %}
             </td>
         </tr>
     </table>

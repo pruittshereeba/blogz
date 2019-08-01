@@ -39,13 +39,6 @@
 
         <h1>{{page_title}}</h1>
 
-        {% with messages = get_flashed messages(with_categories=True) %}
-            <ul>
-                {% for message in messages %}
-                <li class="{{category}}">{{ message }}</li>
-            {% endfor %}
-            </ul>
-        {% endwith %}
 
         {% block content %}
         {% endblock %}
