@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form method='post' action='enter-data'>
+        <label>
+            Blog Title: 
+            <input type="text" name='title' value='{{title}}'/>
+            {% if title == '' %}
+            <span class='error'>Please enter a title for your blog!</span>
+            {% endif %}
+        </label>
+        <br>
+        <textarea type='text' name='entry'>{{entry}}</textarea>
+       {% if entry == '' %}
+       <br>
+       <span class='error'>Please fill in your blog's body!</span>
+       <br>
+       {% endif %}
+       <br>
+        <input type="submit" value='Add Entry'>
+    </form>
+
+{% endblock %} 

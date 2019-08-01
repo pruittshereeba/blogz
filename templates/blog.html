@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if blogs|length == 0 %}
+    <p>No blogs yet! Add one please?!</p>
+    {% else %}
+
+    {% for blog in blogs | reverse %}
+    <form action='/page' method='get' class='blog_page'>
+        <input name='blog-id' value='{{blog.id}}'/>
+        <h2><a href='/page?id={{blog.id}}'>{{blog.title}}</h2></a>
+        <p>{{blog.body}}</p>
+
+        <p class="written-by">
+            written by
+            <a href='/blog?user_id={{blog.owner_id}}'>{{users[blog.owner_id - 1].username}}</a>
+        </p>
+    </form>
+
+    <hr />
+
+    {% endfor %}
+
+    {% endif %}
+{% endblock %}

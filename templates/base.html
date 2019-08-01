@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{page_title}}</title>
+
+        <style>
+        
+            textarea {
+                margin: 10px;
+                width: 540px;
+                height: 120px;
+            }
+            
+            h1 { text-align: center; }
+
+            .links { margin: 10px; }
+            .error { color: orange; }
+            .button { margin: 10px; }
+            .status { float: right; }
+            .users { margin-left: 200px; }
+            .written-by {font-style: italic; font-size: 15px; }
+
+            </style>
+    </head>
+<body> 
+         <a class='links' href="{{ url_for('index') }}"> Blogz Home </a>
+         <a class='links' href="{{ url_for('blog_page') }}"> All Posts </a>
+         <a class='links' href="{{ url_for('go_to_entry') }}"> Add a Blog Entry </a>
+
+    
+
+
+
+    <div class="status">
+        <a class='links' href='/login'> Log In </a>
+        <a class='links' href='/logout'>Log out </a>
+
+    </div>
+
+        <h1>{{page_title}}</h1>
+
+        {% with messages = get_flashed messages(with_categories=True) %}
+            <ul>
+                {% for message in messages %}
+                <li class="{{category}}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endwith %}
+
+        {% block content %}
+        {% endblock %}
+
+</body>
+</html>
