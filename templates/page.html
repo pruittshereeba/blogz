@@ -6,7 +6,7 @@
 
             <p class="written-by">
                 written by
-                <a href='/blog?owner_id={{entry.owner_id}}'>{{users[entry.owner_id].username}}</a>
+                <a href='/blog?owner_id={{entry.owner_id}}'>{{user[entry.owner_id - 1].username}}</a>
             </p>
             
             </hr>

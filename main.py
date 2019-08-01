@@ -133,7 +133,7 @@ def page():
     blog_id = request.args.get('id')
     entry = Blog.query.get(blog_id)
     users = User.query.all()
-    return render_template('page.html', page_title=blog.title, entry=blog.body, user=users )
+    return render_template('page.html', page_title=entry.title, entry=entry.body, user=users )
 
 
 @app.route('/enter-data', methods=['POST', 'GET'])
