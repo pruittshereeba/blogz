@@ -1,38 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>Login</h1>
-
-<form action="login" method="post">
+<form action="/login" method="post">
     <table>
         <tr>
-            <td><label for="email">Username</label></td>
+            <td><label for="username">Username</label></td>
             <td>
-                <input name="email" type="text" value="{{ email }}">
-                {% if email == '' %}
-                <br>
-                <span class='error'>Please enter a username</span>
-                <br>
-                {% endif %}
+                <input id="username" name="username" type="text" value="{{ username }}">
             </td>
         </tr>
-
         <tr>
             <td><label for="password">Password</label></td>
             <td>
-                <input name="password" type="password">
-                {% if password == '' %}
-                <br>
-                <span class='error'>Please enter a password</span>
-                <br>
-                {% endif %}
+                <input id="password" name="password" type="password">
             </td>
         </tr>
     </table>
     <input type="submit" value="Login">
 </form>
-
-<p>Sign up for a new account <a href="/signup">here</a></p>
+<p>Don't have an account? <a href="/signup">Sign up for one here!</a></p>
 
 {% endblock %}
