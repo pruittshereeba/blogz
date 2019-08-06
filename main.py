@@ -100,7 +100,7 @@ def login():
             flash('Logged In')
             return redirect('/newpost')
         else:
-            flash('User password is incorrect or user does not exist', 'error')
+            flash('Username/password combination is incorrect or user does not exist', 'error')
 
     return render_template('login.html', header='Login')
 
